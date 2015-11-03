@@ -5,15 +5,19 @@
   <meta charset="utf-8" />
   <title>AyimaData</title>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-  <script>
-  	<?php 
-$protocol = "HTTP/1.0";
-if ( "HTTP/1.1" == $_SERVER["SERVER_PROTOCOL"] )
-$protocol = "HTTP/1.1";
-header( "$protocol 503 Service Unavailable", true, 503 );
-header( "Retry-After: 3600" );  
-?>
-  </script>
+  <style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
 </head>
 
 <body>
@@ -21,6 +25,12 @@ header( "Retry-After: 3600" );
     <ul>
       <li data-ng-repeat="x in ayima">
         <p>{{ x.domain }}</p>
+        <table>
+  <tr ng-repeat="(key, value) in x.scores">
+    <td>{{key}}</td>
+    <td>{{value}}</td>
+  </tr>
+</table>
       </li>
     </ul>
   </div>
