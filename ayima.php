@@ -5,6 +5,15 @@
   <meta charset="utf-8" />
   <title>AyimaData</title>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script>
+  	<?php 
+$protocol = "HTTP/1.0";
+if ( "HTTP/1.1" == $_SERVER["SERVER_PROTOCOL"] )
+$protocol = "HTTP/1.1";
+header( "$protocol 503 Service Unavailable", true, 503 );
+header( "Retry-After: 3600" );  
+?>
+  </script>
 </head>
 
 <body>
