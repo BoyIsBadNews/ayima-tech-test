@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8" />
-  <title>MarketIntel Data</title>
-</head>
+<!doctype html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>dataAyima</title>
+</head>
+
 <body>
 <?php
 header("Content-Type: application/json");
